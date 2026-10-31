@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>김낙경 포트폴리오 · 컴포넌트 미리보기</title>
+  <meta name="description" content="김낙경 포트폴리오의 재사용 UI 컴포넌트와 테마 확인 페이지">
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/showcase.css">
+  <script defer src="components/utils.js"></script>
+  <script defer src="components/button.js"></script>
+  <script defer src="components/badge.js"></script>
+  <script defer src="components/alert.js"></script>
+  <script defer src="components/field.js"></script>
+  <script defer src="components/work-card.js"></script>
+  <script defer src="components/header.js"></script>
+  <script defer src="components/footer.js"></script>
+  <script defer src="components/empty-state.js"></script>
+  <script defer src="components/dialog.js"></script>
+  <script defer src="showcase.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">본문 바로가기</a>
+  <p-header home-href="./index.html" works-href="#works"></p-header>
+  <main id="main" tabindex="-1">
+    <section class="section" id="about">
+      <div class="container stack">
+        <div class="row"><p-badge tone="info">컴포넌트 미리보기</p-badge><span class="muted small">김낙경 포트폴리오 / UI 1.0</span></div>
+        <div class="stack reading"><h1>명확하게 소개하고,<br>경험으로 보여줍니다.</h1><p class="lead">물류 포트폴리오를 위한 차분한 색상과 읽기 쉬운 구성.<br>공개 페이지부터 관리 화면까지 같은 테마로 연결합니다.</p></div>
+        <div class="row"><p-button href="#works" size="large">업무 개선 사례 보기</p-button><p-button href="#forms" variant="secondary" size="large">관리 컴포넌트 보기</p-button></div>
+        <p class="small muted">이 페이지는 UI 확인용입니다. 작업물은 예시이며 저장·공개 기능은 서버에 연결되지 않았습니다.</p>
+      </div>
+    </section>
+    <section class="section soft">
+      <div class="container stack"><div><p class="eyebrow">01 · THEME</p><h2>색상과 타이포그래피</h2></div>
+        <div class="palette"><div class="swatch"><div class="swatch-color swatch-primary"></div><strong>메인 파랑</strong><span>#1D4ED8</span></div><div class="swatch"><div class="swatch-color swatch-secondary"></div><strong>서브 남색</strong><span>#0F172A</span></div><div class="swatch"><div class="swatch-color swatch-accent"></div><strong>연한 강조</strong><span>#EFF6FF</span></div><div class="swatch"><div class="swatch-color swatch-page"></div><strong>페이지 배경</strong><span>#F8FAFC</span></div></div>
+        <p class="reading">기본 본문은 16px, 줄 높이는 28px입니다. 넉넉한 여백과 명확한 제목으로 업무 배경·본인 역할·결과를 편하게 읽을 수 있도록 구성합니다.</p>
+      </div>
+    </section>
+    <section class="section"><div class="container stack"><div><p class="eyebrow">02 · ACTIONS</p><h2>버튼과 상태</h2></div>
+      <div class="row"><p-button id="save-demo">저장 상태 체험</p-button><p-button variant="secondary" id="dialog-open">비공개 확인창</p-button><p-button href="#works" variant="text">작업물로 이동</p-button><p-button disabled>비활성 버튼</p-button><p-button size="small" variant="secondary" id="small-demo">작은 버튼</p-button></div>
+      <div class="row"><p-badge>초안</p-badge><p-badge tone="success">게시</p-badge><p-badge>비공개</p-badge><p-badge tone="warning">수정 초안 있음</p-badge></div>
+      <p-alert tone="info">게시 전까지 방문자에게는 기존 공개본이 보입니다.</p-alert>
+      <div id="feedback" role="status" aria-live="polite"></div>
+    </div></section>
+    <section class="section soft" id="works"><div class="container stack"><div><p class="eyebrow">03 · WORKS</p><h2>업무 개선 사례 카드</h2><p class="muted">아래 사례는 화면 구성을 위한 예시입니다.</p></div>
+      <div class="works-grid">
+        <p-work-card example heading="업무 프로세스 개선" summary="문제 발견부터 개선 실행까지의 과정을 정리합니다." href="#case-example"></p-work-card>
+        <p-work-card example heading="재고 관리 개선" summary="업무 현황과 본인의 역할을 구체적으로 소개합니다." href="#case-example"></p-work-card>
+        <p-work-card example heading="협업 방식 개선" summary="개선 활동과 확인된 결과를 중심으로 설명합니다." href="#case-example"></p-work-card>
+      </div>
+      <div class="result-panel reading" id="case-example" tabindex="-1"><h3>사례 상세 본문 예시</h3><p>이 영역에는 실제 업무 배경, 문제, 본인 역할, 개선 행동과 결과가 들어갑니다. 현재는 카드 이동과 결과 강조 스타일을 확인하기 위한 예시입니다.</p></div>
+    </div></section>
+    <section class="section" id="forms"><div class="container"><div class="section-heading"><div><p class="eyebrow">04 · EDITOR</p><h2>자기소개 편집 컴포넌트</h2></div><p-badge>초안 예시</p-badge></div>
+      <form id="profile-form" class="stack editor">
+        <p-alert tone="info">입력과 검증을 체험할 수 있습니다. 새로고침하면 입력값이 초기화됩니다.</p-alert>
+        <p-field label="이름" name="name" value="김낙경" maxlength="50" autocomplete="name" required></p-field>
+        <p-field label="관심 분야" name="interest" value="물류" maxlength="100" required></p-field>
+        <p-field label="한 줄 소개" name="headline" maxlength="120" help="관심 분야와 소개를 한 문장으로 작성해 주세요." required></p-field>
+        <p-field label="자기소개" name="bio" multiline maxlength="3000" required></p-field>
+        <label class="checkbox"><input type="checkbox" id="publish-check">공개할 내용을 확인했습니다.</label>
+        <div class="editor-actions"><p-button variant="secondary" id="draft">초안 저장 체험</p-button><p-button variant="secondary" id="preview">미리보기</p-button><p-button id="publish">게시 검증 체험</p-button></div>
+        <div id="form-feedback" role="status" aria-live="polite"></div>
+        <section class="preview-panel stack" id="preview-panel" hidden aria-label="자기소개 미리보기"><h3>미리보기 · 아직 게시되지 않았습니다</h3><p id="preview-name"></p><p id="preview-headline"></p><p id="preview-bio"></p></section>
+      </form>
+    </div></section>
+    <section class="section soft"><div class="container stack"><div><p class="eyebrow">05 · FEEDBACK</p><h2>빈 화면과 오류 안내</h2></div><p-empty-state heading="업무 개선 사례를 준비하고 있습니다." description="공개된 사례가 없을 때 보여주는 안내입니다." href="#about" action-label="소개로 돌아가기"></p-empty-state><p-alert tone="error">저장 실패 안내 예시입니다. 입력 내용을 유지하고 다시 시도할 수 있도록 안내합니다.</p-alert></div></section>
+  </main>
+  <p-footer></p-footer>
+  <p-confirm-dialog id="visibility-dialog"></p-confirm-dialog>
+  <noscript>컴포넌트를 확인하려면 브라우저에서 JavaScript를 활성화해 주세요.</noscript>
+</body>
+</html>
