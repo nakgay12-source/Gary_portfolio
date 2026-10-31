@@ -1,0 +1,32 @@
+/* 공개 화면과 관리 화면에 공통으로 적용하는 기본 배치입니다. */
+* { box-sizing: border-box; }
+body { margin: 0; color: var(--text); background: var(--surface); font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; font-size: 1rem; line-height: 1.75; word-break: keep-all; overflow-wrap: anywhere; }
+button, input, textarea { font: inherit; }
+button, a { touch-action: manipulation; }
+h1, h2, h3, p { margin: 0; }
+h1, h2, h3 { color: var(--secondary); }
+h1 { font-size: 2.25rem; line-height: 1.28; letter-spacing: -.02em; }
+h2 { font-size: 1.5rem; line-height: 1.5; }
+h3 { font-size: 1.25rem; line-height: 1.5; font-weight: 600; }
+a { color: var(--primary); text-underline-offset: 4px; }
+img { max-width: 100%; height: auto; display: block; }
+:focus-visible { outline: 3px solid var(--primary); outline-offset: 3px; }
+[hidden] { display: none !important; }
+.container { width: calc(100% - var(--gutter) * 2); max-width: var(--content-max); margin-inline: auto; }
+.reading { max-width: var(--reading-max); }
+.section { padding-block: var(--space-12); }
+.section + .section { border-top: 1px solid var(--border); }
+.section-heading { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 32px; }
+.stack { display: grid; gap: 24px; }
+.row, .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.actions { justify-content: flex-end; }
+.muted { color: var(--text-muted); }
+.small { font-size: .875rem; line-height: 1.57; }
+.soft { background: var(--page); }
+.skip-link { position: absolute; top: 8px; left: 20px; z-index: 10; padding: 12px; background: white; transform: translateY(-200%); }
+.skip-link:focus { transform: translateY(0); }
+.works-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; }
+.works-grid > * { min-width: 0; }
+@media (min-width: 768px) { :root { --gutter: 32px; } .works-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; } }
+@media (min-width: 1024px) { :root { --gutter: 40px; } h1 { font-size: 3rem; line-height: 1.25; } h2 { font-size: 1.75rem; line-height: 1.43; } .section { padding-block: var(--space-20); } .works-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
