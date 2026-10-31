@@ -1,0 +1,16 @@
+/* 디자인 가이드의 공통 값을 한곳에서 관리합니다. */
+:root {
+  --primary: #1d4ed8; --primary-hover: #1e40af; --primary-active: #1e3a8a;
+  --secondary: #0f172a; --accent-soft: #eff6ff; --page: #f8fafc;
+  --surface: #fff; --text: #1e293b; --text-muted: #475569;
+  --border: #e2e8f0; --control-border: #64748b;
+  --disabled-bg: #e2e8f0; --disabled-text: #475569;
+  --success: #166534; --success-bg: #f0fdf4;
+  --warning: #92400e; --warning-bg: #fffbeb;
+  --error: #b91c1c; --error-bg: #fef2f2;
+  --info: #1e40af; --info-bg: #eff6ff; --neutral-bg: #f1f5f9;
+  --radius-control: 8px; --radius-card: 12px; --radius-dialog: 16px;
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
+  --space-6: 24px; --space-8: 32px; --space-12: 48px; --space-20: 80px;
+  --gutter: 20px; --content-max: 1120px; --reading-max: 720px;
+}
